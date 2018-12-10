@@ -9,7 +9,7 @@ source:
   sha256: ccd22c5dc2e1e078af10a52db631b382506356f4f69522b1c6da5f74aa50d8c8
 
 build:
-  number: 0
+  number: 1000
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - deps = deps.deps_cli:main_func
