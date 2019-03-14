@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: deps
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/ESSS/deps/archive/v{{ version }}.tar.gz
-  sha256: ccd22c5dc2e1e078af10a52db631b382506356f4f69522b1c6da5f74aa50d8c8
+  sha256: 4969988de38ae6c7e54806a14f3713e7346d3c77283f60881feaf432457ecc18
 
 build:
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - deps = deps.deps_cli:main_func
