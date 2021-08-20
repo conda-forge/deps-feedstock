@@ -1,4 +1,4 @@
-{% set version = "1.1.1" %}
+{% set version = "1.2.0" %}
 
 package:
   name: deps
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://github.com/ESSS/deps/archive/v{{ version }}.tar.gz
-  sha256: 4969988de38ae6c7e54806a14f3713e7346d3c77283f60881feaf432457ecc18
+  sha256: 2c6d757715f1f2f848ab3b3c4ec36bbfeb3f98334c989c0acdd75a3b3fd9d2d7
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - deps = deps.deps_cli:main_func
 
@@ -46,7 +46,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'An utility to execute commands on multiple projects.'
+  summary: An utility to execute commands on multiple projects.
   doc_url: https://github.com/ESSS/deps
   dev_url: https://github.com/ESSS/deps
 
