@@ -9,7 +9,7 @@ source:
   sha256: 2c6d757715f1f2f848ab3b3c4ec36bbfeb3f98334c989c0acdd75a3b3fd9d2d7
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - deps = deps.deps_cli:main_func
@@ -37,7 +37,7 @@ test:
     - deps --help
     - deps --version
     - python -m deps --version
-    - pytest source/python
+    - pytest source/python -p deps.fixtures
   source_files:
     - source/python
 
