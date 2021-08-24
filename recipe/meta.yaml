@@ -37,8 +37,9 @@ test:
     - deps --help
     - deps --version
     - python -m deps --version
-    - pytest source/python -p deps.fixtures
+    - pytest source/python --pyargs deps -p deps.fixtures
   source_files:
+    - pytest.ini
     - source/python
 
 about:
