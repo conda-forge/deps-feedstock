@@ -24,13 +24,12 @@ requirements:
     - colorama
     - jinja2
     - pyyaml
-    - futures  # [py27]
+    - futures  # [py==27]
 
 test:
   requires:
     - pytest >=3
     - pytest-mock
-    - future
   imports:
     - deps
   commands:
