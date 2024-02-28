@@ -16,15 +16,14 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.10
     - pip
   run:
-    - python
+    - python >=3.10
     - click
     - colorama
     - jinja2
     - pyyaml
-    - futures  # [py==27]
 
 test:
   requires:
