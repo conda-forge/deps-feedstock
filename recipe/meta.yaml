@@ -1,4 +1,4 @@
-{% set version = "1.3.1" %}
+{% set version = "1.4.0" %}
 
 package:
   name: deps
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/ESSS/deps/archive/v{{ version }}.tar.gz
-  sha256: 2c04846aeef3d2bed632348fc7c4db5b95c2baea129f2442b2713585394d5085
+  sha256: 34f40c21e2b46e6959f45a516ed6bceb6011385253881cdd21ee39cceef66087
 
 build:
   noarch: python
