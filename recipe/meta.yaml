@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set version = "1.4.0" %}
 
 package:
@@ -10,17 +11,17 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - deps = deps.deps_cli:main_func
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - click
     - colorama
     - jinja2
@@ -30,6 +31,7 @@ test:
   requires:
     - pytest >=3
     - pytest-mock
+    - python {{ python_min }}
   imports:
     - deps
   commands:
