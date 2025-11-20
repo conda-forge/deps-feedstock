@@ -1,5 +1,5 @@
 {% set python_min = "3.10" %}
-{% set version = "1.5.1" %}
+{% set version = "1.6.0" %}
 
 package:
   name: deps
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ESSS/deps/archive/v{{ version }}.tar.gz
-  sha256: ad350213e62b98909d853d6dd18cf16a0ea4a26b7cda6f90c01e3430b70c33f8
+  sha256: 7f2a66120e3bcd6bb738146dfef66121d1cb9e0004f69abc0048ede3dbe7aad1
 
 build:
   noarch: python
@@ -37,7 +37,7 @@ test:
     # this breaks test_force_color in our test suite.
     - click >=8.1,!=8.2.*
     - pytest >=8.4.1
-    - pytest-mock>=3.14.1
+    - pytest-mock >=3.14.1
     - python {{ python_min }}
   imports:
     - deps
