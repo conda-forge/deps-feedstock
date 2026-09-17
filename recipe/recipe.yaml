@@ -1,8 +1,7 @@
 schema_version: 1
 
 context:
-  python_min: "3.10"
-  version: "1.7.0"
+  version: "1.8.0"
 
 package:
   name: deps
@@ -10,7 +9,7 @@ package:
 
 source:
   url: https://github.com/ESSS/deps/archive/v${{ version }}.tar.gz
-  sha256: c4868d2572ae247167587e98ec4a633625c542b8bd3a15f5b3e0221c8e09f838
+  sha256: 4c88aaf42d801b36f09270a06f253c0044b27a55c8003c4c53b816fc9950adf2
 
 build:
   number: 0
@@ -27,8 +26,7 @@ requirements:
     - uv-build >=0.8,<0.9.0
   run:
     - python >=${{ python_min }}
-    - click >=7.0
-    - colorama >=0.4
+    - click >=8.5
     - importlib-metadata >=8.7.0
     - jinja2 >=3.1
     - pyyaml >=6.0.2
@@ -37,15 +35,16 @@ requirements:
 
 tests:
   - python:
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
       imports:
         - deps
       pip_check: false
   - requirements:
       run:
-        - click >=8.1,!=8.2.*
         - pytest >=8.4.1
         - pytest-mock >=3.14.1
-        - python ${{ python_min }}.*
     script:
       - deps --help
       - deps --version
